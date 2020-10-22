@@ -8,7 +8,6 @@ class AccountSteps extends DefaultSteps {
 
 	auth() {
 		this.open('https://account.mail.ru');
-		this.waitForAccount();
 		this.login();
 	}
 
@@ -18,10 +17,8 @@ class AccountSteps extends DefaultSteps {
 		this.page.fillPasswordForm(process.env.PASSWORD);
 		this.page.submit();
 		this.page.waitForUrl('https://e.mail.ru/inbox/?afterReload=1');
-	}
-
-	waitForAccount() {
-		this.page.waitForContainer();
+		this.open("https://cloud.mail.ru");
+		this.page.waitForUrl("https://cloud.mail.ru/home");
 	}
 }
 
