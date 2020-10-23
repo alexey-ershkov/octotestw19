@@ -4,6 +4,7 @@ import page from '../pages/account';
 class AccountSteps extends DefaultSteps {
 	constructor() {
 		super(page);
+		this.url = "https://cloud.mail.ru";
 	}
 
 	auth() {
@@ -21,8 +22,8 @@ class AccountSteps extends DefaultSteps {
 	}
 
 	openHome() {
-		this.open("https://cloud.mail.ru");
-		this.page.waitForUrl("https://cloud.mail.ru/home");
+		this.open();
+		this.page.waitForUrl(this.url+"/home");
 	}
 }
 
