@@ -11,7 +11,7 @@ exports.config = {
 	port: 9515,
 	path: '/',
 	specs: [
-		'./cases/**/**/*.js'
+		'./cases/**/*.js'
 	],
 
 	// ============

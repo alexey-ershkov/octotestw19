@@ -1,5 +1,5 @@
-import account from "../../../steps/account";
-import folders from "../../../steps/folders";
+import account from "../../steps/account";
+import folders from "../../steps/folders";
 
 describe('Работа с папками', () => {
 
