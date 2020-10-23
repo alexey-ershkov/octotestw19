@@ -6,8 +6,11 @@ class FoldersSteps extends DefaultSteps {
         super(page);
     }
 
-    createFolder() {
+    openHomePage() {
         this.open(`https://cloud.mail.ru/home/`);
+    }
+
+    createFolder() {
         const folderName = "test_folder";
         this.page.createFolder(folderName);
         this.open(`https://cloud.mail.ru/home/${folderName}`);
@@ -17,7 +20,6 @@ class FoldersSteps extends DefaultSteps {
     }
 
     createFolderInsideFolder() {
-        this.open(`https://cloud.mail.ru/home/`);
         const folderName = "test_folder";
         const insideFolderName = "inside_test_folder";
         this.page.createFolder(folderName);

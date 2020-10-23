@@ -21,10 +21,9 @@ class FolderPage extends DefaultPage {
     }
 
     createFolder(name) {
-        this.page.waitForVisible(this.locators.createButton);
-        this.page.click(this.locators.createButton);
-        this.page.waitForVisible(this.locators.createNewFolder);
-        this.page.click(this.locators.createNewFolder);
+        this.waitForVisibleAndClick(this.locators.createButton)
+        this.waitForVisibleAndClick(this.locators.createNewFolder)
+
         this.page.waitForVisible(this.locators.folderNameInput);
         this.page.setValue(this.locators.folderNameInput, name);
         this.page.click(this.locators.createFolderButton);
@@ -39,16 +38,12 @@ class FolderPage extends DefaultPage {
     }
 
     deleteFolder() {
-        this.page.waitForVisible(this.locators.deleteButton);
-        this.page.click(this.locators.deleteButton)
-
-        this.page.waitForVisible(this.locators.confirmDeletingButton);
-        this.page.click(this.locators.confirmDeletingButton);
+        this.waitForVisibleAndClick(this.locators.deleteButton);
+        this.waitForVisibleAndClick(this.locators.confirmDeletingButton);
     }
 
     closeBanner() {
-        this.page.waitForVisible(this.locators.closeBannerButton);
-        this.page.click(this.locators.closeBannerButton);
+        this.waitForVisibleAndClick(this.locators.closeBannerButton)
     }
 
     createFolderRightClick(name) {
@@ -58,8 +53,8 @@ class FolderPage extends DefaultPage {
         this.page.waitForVisible(this.locators.rightClickCreateButton);
         this.page.rightClick(this.locators.rightClickCreateButton);
 
-        this.page.waitForVisible(this.locators.createNewFolder);
-        this.page.click(this.locators.createNewFolder);
+        this.waitForVisibleAndClick(this.locators.createNewFolder);
+
         this.page.waitForVisible(this.locators.folderNameInput);
         this.page.setValue(this.locators.folderNameInput, name);
         this.page.click(this.locators.createFolderButton);

@@ -7,6 +7,10 @@ describe('Работа с папками', () => {
         account.auth();
     })
 
+    beforeEach(() => {
+        folders.openHomePage();
+    })
+
     it('Создание папки из сетки и подпапки в ней', () => {
         folders.createFolderInsideFolder();
     })
