@@ -3,6 +3,7 @@ import DefaultPage from "../default";
 class FolderPage extends DefaultPage {
     constructor() {
         super('folders', '[data-bem="b-react-component"]');
+        this.homePage = `https://cloud.mail.ru/home/`;
     }
 
     get locators () {
@@ -30,11 +31,11 @@ class FolderPage extends DefaultPage {
     }
 
     checkFolderExists(name) {
-        this.waitForUrl(`https://cloud.mail.ru/home/${name}/`);
+        this.waitForUrl(`${this.homePage}${name}/`);
     }
 
     checkSubFolderExists(name, sub_name) {
-        this.waitForUrl(`https://cloud.mail.ru/home/${name}/${sub_name}/`);
+        this.waitForUrl(`${this.homePage}${name}/${sub_name}/`);
     }
 
     deleteFolder() {

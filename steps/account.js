@@ -23,7 +23,7 @@ class AccountSteps extends DefaultSteps {
 
 	openHome() {
 		this.open();
-		this.page.waitForUrl(this.url+"/home");
+		this.page.waitForUrl(`${this.url}/home`);
 	}
 }
 

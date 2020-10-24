@@ -11,8 +11,7 @@ class FoldersSteps extends DefaultSteps {
         this.open(this.url + `/home/`);
     }
 
-    createFolder() {
-        const folderName = "test_folder";
+    createFolder(folderName) {
         this.page.createFolder(folderName);
         this.open(this.url+`/home/${folderName}`);
         this.page.closeBanner();
@@ -20,9 +19,7 @@ class FoldersSteps extends DefaultSteps {
         this.page.deleteFolder(folderName);
     }
 
-    createFolderInsideFolder() {
-        const folderName = "test_folder";
-        const insideFolderName = "inside_test_folder";
+    createFolderInsideFolder(folderName, insideFolderName) {
         this.page.createFolder(folderName);
 
         this.open(this.url+`/home/${folderName}`);

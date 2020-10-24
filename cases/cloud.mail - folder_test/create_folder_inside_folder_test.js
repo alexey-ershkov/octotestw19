@@ -3,15 +3,12 @@ import folders from "../../steps/folders";
 
 describe('Работа с папками', () => {
 
-    before(() => {
+    beforeEach(() => {
+        folders.openHomePage();
         account.auth();
     })
 
-    beforeEach(() => {
-        folders.openHomePage();
-    })
-
     it('Создание папки из сетки и подпапки в ней', () => {
-        folders.createFolderInsideFolder();
+        folders.createFolderInsideFolder("test_folder", "inner_test_folder");
     })
 });
