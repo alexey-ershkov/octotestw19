@@ -22,6 +22,11 @@ export default class DefaultPage {
 		this.page.waitForVisible(this.container);
 	}
 
+	waitForVisibleAndClick(element) {
+		this.page.waitForVisible(element);
+		this.page.click(element)
+	}
+
 	waitForUrl(value, timeout, revert) {
 		let url, actual;
 		try {
